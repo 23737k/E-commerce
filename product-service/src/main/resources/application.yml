@@ -1,0 +1,8 @@
+spring:
+  application:
+    name: Product Service
+  data:
+    mongodb:
+      uri: mongodb://root:root@mongodb:27017/products?authSource=admin
+server:
+  port: 8080
