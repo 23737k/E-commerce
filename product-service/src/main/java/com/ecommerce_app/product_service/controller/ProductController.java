@@ -29,12 +29,12 @@ public class ProductController {
 
     @PostMapping
     public ResponseEntity<ProductRes> createProduct(@RequestBody @Validated ProductReq productReq){
-        return ResponseEntity.ok(service.createProduct(productReq));
+        return new ResponseEntity<>(service.createProduct(productReq), HttpStatus.CREATED);
     }
 
     @PutMapping("/{id}")
     public ResponseEntity<ProductRes> updateProduct(@PathVariable String id, @RequestBody @Validated ProductReq productReq){
-        return new ResponseEntity<>(service.updateProduct(id, productReq), HttpStatus.CREATED);
+        return new ResponseEntity<>(service.updateProduct(id, productReq), HttpStatus.ACCEPTED);
     }
 
     @DeleteMapping("/{id}")
